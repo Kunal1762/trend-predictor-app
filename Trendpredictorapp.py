@@ -192,7 +192,7 @@ data_training_array=scaler.fit_transform(data_training)
 # x_train ,y_train = np.array(x_train),np.array(y_train)
 
 #Load LSTM model.
-model=load_model('keras_model.h5')
+model = load_model("keras_model.keras")
 
 #Predictions
 # past_100_days=data_training.tail(100)
