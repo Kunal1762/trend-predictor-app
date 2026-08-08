@@ -244,7 +244,7 @@ x_test = np.array(x_test)
 y_test = np.array(y_test)
 
 # Make predictions on historical data
-y_predicted = model.predict(x_test, verbose=0)
+y_predicted = model(x_test, training=False).numpy()
 
 # Convert back to original prices
 scale = scaler.scale_[0]
@@ -283,7 +283,7 @@ with st.spinner("🤖 Generating 30-day forecast..."):
 
         x = future_window.reshape(1,100,1)
 
-        pred = model.predict(x, verbose=0)
+        pred = model(x, training=False).numpy()
 
         future_predictions.append(pred[0,0])
 
